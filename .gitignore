@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.Python
+build/
+dist/
+
+# Test / benchmark caches
+.pytest_cache/
+.benchmarks/
+.coverage
+htmlcov/
+
+# Smoke / scratch outputs
+outputs_smoke/
+
+# Editor / OS
+.vscode/
+.idea/
+.specstory/
+.DS_Store
+Thumbs.db

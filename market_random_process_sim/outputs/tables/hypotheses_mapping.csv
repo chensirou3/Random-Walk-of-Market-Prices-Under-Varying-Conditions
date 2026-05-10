@@ -1,0 +1,16 @@
+hypothesis_id,hypothesis_text,corresponding_experiment,metric_used,expected_result,output_table,output_figure,status_placeholder
+H0,"Random price processes can emerge endogenously from decentralized random orders and auction-clearing rules, and different market microstructures systematically alter the statistical form of these processes.",All,Cross-experiment diagnostics,Different mechanisms alter process metrics,cross_experiment_summary.csv,cross_experiment_process_comparison.png,supported
+H1,"In an unlimited-wealth random-order market, auction clearing generates a price process resembling a random walk.",Experiment 1,random walk diagnostics,"near-zero drift, low autocorrelation, variance ratio near one",exp1_random_walk_diagnostics.csv,exp1_multiple_paths.png,supported
+H1a,Mean log return is close to zero.,Experiment 1,mean_log_return,close to zero,exp1_random_walk_diagnostics.csv,exp1_random_walk_diagnostics_table.png,supported
+H1b,Lag-1 return autocorrelation is close to zero.,Experiment 1,lag1_autocorr_log_return,close to zero,exp1_random_walk_diagnostics.csv,exp1_random_walk_diagnostics_table.png,supported
+H1c,Variance ratio is close to one.,Experiment 1,variance_ratio_lag5,near one,exp1_random_walk_diagnostics.csv,exp1_random_walk_diagnostics_table.png,supported
+H1d,Multiple simulated paths show diffusion without a common directional trend.,Experiment 1,multiple paths,"diffusion, no shared direction",exp1_multiple_paths.csv,exp1_multiple_paths.png,supported
+H2,Wealth constraints transform the freely diffusive random process into a more bounded and weakly mean-reverting process.,Experiment 2,mean_beta; log_deviation_variance,negative beta and constrained dispersion,exp2_summary_by_wealth_multiplier.csv,exp2_mean_beta_ci_by_wealth_multiplier.png,supported
+H2a,Mean reversion beta is negative.,Experiment 2,mean_beta,negative,exp2_summary_by_wealth_multiplier.csv,exp2_beta_distribution_by_wealth_multiplier.png,supported
+H2b,Log deviation variance is lower under stronger constraints.,Experiment 2,mean_log_deviation_variance,lower under stronger constraints,exp2_summary_by_wealth_multiplier.csv,exp2_log_deviation_variance_by_wealth_multiplier.png,partially supported
+H2c,Ablation study shows which constraint mechanism contributes most to boundedness.,Experiment 2 Ablation,beta and log deviation variance by constraint type,cash/inventory contributions differ,exp2_ablation_summary.csv,exp2_ablation_mean_beta_ci.png,evaluated
+H3,Market depth controls the volatility scale of the emergent random process.,Experiment 3,avg_std_return,lower volatility at higher depth,exp3_metrics.csv,exp3_volatility_vs_depth.png,supported
+H3a,Lower market depth increases return volatility.,Experiment 3,avg_std_return,decreases with depth,exp3_metrics.csv,exp3_volatility_vs_depth.png,supported
+H3b,Lower market depth increases maximum absolute return.,Experiment 3,avg_max_abs_return,decreases with depth,exp3_metrics.csv,exp3_extreme_move_vs_depth.png,supported
+H3c,Lower market depth increases order-curve roughness.,Experiment 3,avg_curve_roughness,decreases with depth,exp3_metrics.csv,exp3_curve_roughness_vs_depth.png,supported
+H3d,Higher curve roughness is associated with higher volatility.,Experiment 3,corr_roughness_volatility,positive relation,exp3_roughness_volatility_summary.csv,exp3_roughness_vs_volatility.png,supported
